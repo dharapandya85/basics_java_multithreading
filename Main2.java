@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args){
         ExecutorService executorService = Executors.newFixedThreadPool(2);
        Callable<Integer> callable1 = ()->{
+          //thread is set for sleep for 1ms
            Thread.sleep(1000);
            System.out.println("Task 1");;
            return 1;
