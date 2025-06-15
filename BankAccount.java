@@ -12,6 +12,7 @@ public class BankAccount {
     public  void withdraw(int amount) {
         System.out.println(Thread.currentThread().getName()+ " attempting to Withdraw" + amount );
         try {
+            //creating lock logic, and updating balance and amount
             lock.lock();
             if(lock.tryLock(1000, TimeUnit.MILLISECONDS)) {
                 if (balance >= amount) {
